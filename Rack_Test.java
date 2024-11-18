@@ -91,7 +91,7 @@ public class Rack_Test extends LinearOpMode {
             BL_Motor.setPower(leftBackPower);
             BR_Motor.setPower(rightBackPower);
 
-            // Calculate Servo Position
+            /* // Calculate Servo Position
             if(!dpad_latch_right && gamepad1.dpad_right && Rack_Pos < 1.0){
                 Rack_Pos = Rack_Pos + Rack_inc;
             }
@@ -103,7 +103,7 @@ public class Rack_Test extends LinearOpMode {
             dpad_latch_left = gamepad1.dpad_left;
 
             // Set Servo Position
-            Rack_Servo.setPosition(Rack_Pos);
+            Rack_Servo.setPosition(Rack_Pos); */
 
             // Show the elapsed game time and wheel power.
             telemetry.addData("Status", "Run Time: " + runtime.toString());
