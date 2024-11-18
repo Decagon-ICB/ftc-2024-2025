@@ -61,6 +61,7 @@ public class Rack_Test extends LinearOpMode {
         // run until the end of the match (driver presses STOP)
         while (opModeIsActive()) {
 
+			//BEGIN Motor Math
         	axial   = -gamepad1.left_stick_y;
         	lateral =  gamepad1.left_stick_x;
         	yaw     =  gamepad1.right_stick_x;
@@ -82,7 +83,8 @@ public class Rack_Test extends LinearOpMode {
                 leftBackPower   /= max;
                 rightBackPower  /= max;
             }
-
+			//END Motor Math
+			
             // Send calculated power to wheels
             FL_Motor.setPower(leftFrontPower);
             FR_Motor.setPower(rightFrontPower);
@@ -110,10 +112,6 @@ public class Rack_Test extends LinearOpMode {
             telemetry.addData("Rack_Pos", "%4.2f", Rack_Pos);
             telemetry.update();
         }
-	
-	public void Esting() {
-		
-	}
 	
     }}
 
