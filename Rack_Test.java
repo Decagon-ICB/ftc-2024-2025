@@ -58,6 +58,12 @@ public class Rack_Test extends LinearOpMode {
         telemetry.addData("Status", "Initialized");
         telemetry.update();
 
+		// Reset the motor encoder so that it reads zero ticks
+        Rack_Motor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+
+   		// Turn the motor back on, required if you use STOP_AND_RESET_ENCODER
+      	Rack_Motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
         waitForStart();
         runtime.reset();
 
@@ -110,11 +116,17 @@ public class Rack_Test extends LinearOpMode {
             // Set Servo Position
             Rack_Servo.setPosition(Rack_Pos); */
 
+           	int position = Rack_Motor.getCurrentPosition();
+
             // Show the elapsed game time and wheel power.
             telemetry.addData("Status", "Run Time: " + runtime.toString());
             telemetry.addData("Front left/Right", "%4.2f, %4.2f", leftFrontPower, rightFrontPower);
             telemetry.addData("Back  left/Right", "%4.2f, %4.2f", leftBackPower, rightBackPower);
             // telemetry.addData("Rack_Pos", "%4.2f", Rack_Pos);
+           	// Get the current position of the motor
+           
+           	// Show the position of the motor on telemetry
+          	telemetry.addData("Encoder Position", position);
             telemetry.update();
         }
 	
