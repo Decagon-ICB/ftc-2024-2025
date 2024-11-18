@@ -16,13 +16,15 @@ public class Rack_Test extends LinearOpMode {
     public DcMotor BR_Motor = null;
     public DcMotor FL_Motor = null;
     public DcMotor FR_Motor = null;
+	
+	public DcMotor Rack_Motor = null;
 
-    public Servo Rack_Servo = null;
+    // public Servo Rack_Servo = null;
 
-    public double Rack_Pos = 0.0;
-    public double Rack_inc = 0.05;
-    public boolean dpad_latch_right = false;
-    public boolean dpad_latch_left = false;
+    // public double Rack_Pos = 0.0;
+    // public double Rack_inc = 0.05;
+    // public boolean dpad_latch_right = false;
+    // public boolean dpad_latch_left = false; 
 
 
     @Override
@@ -31,8 +33,9 @@ public class Rack_Test extends LinearOpMode {
         FL_Motor = hardwareMap.get(DcMotor.class, "FL Wheel Motor");
         BL_Motor = hardwareMap.get(DcMotor.class, "BL Wheel Motor");
         FR_Motor = hardwareMap.get(DcMotor.class, "FR Wheel Motor");
+		Rack_Motor = hardwareMap.get(DcMotor.class, "Rack Motor");
 
-        Rack_Servo = hardwareMap.get(Servo.class, "Rack_Servo");
+        // Rack_Servo = hardwareMap.get(Servo.class, "Rack_Servo");
 
 		double max = 0.0;
 
@@ -91,6 +94,8 @@ public class Rack_Test extends LinearOpMode {
             BL_Motor.setPower(leftBackPower);
             BR_Motor.setPower(rightBackPower);
 
+			Rack_Motor.setPower();
+
             /* // Calculate Servo Position
             if(!dpad_latch_right && gamepad1.dpad_right && Rack_Pos < 1.0){
                 Rack_Pos = Rack_Pos + Rack_inc;
@@ -109,7 +114,7 @@ public class Rack_Test extends LinearOpMode {
             telemetry.addData("Status", "Run Time: " + runtime.toString());
             telemetry.addData("Front left/Right", "%4.2f, %4.2f", leftFrontPower, rightFrontPower);
             telemetry.addData("Back  left/Right", "%4.2f, %4.2f", leftBackPower, rightBackPower);
-            telemetry.addData("Rack_Pos", "%4.2f", Rack_Pos);
+            // telemetry.addData("Rack_Pos", "%4.2f", Rack_Pos);
             telemetry.update();
         }
 	
