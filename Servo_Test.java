@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 @TeleOp(name="Rack Test", group="2024-2025")
-public class Rack_Test extends LinearOpMode {
+public class Servo_Test extends LinearOpMode {
 
             // Calculate Servo Position
             if(!dpad_latch_right && gamepad1.dpad_right && Rack_Pos < 1.0){
