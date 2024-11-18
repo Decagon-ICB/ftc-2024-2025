@@ -40,7 +40,7 @@ public class Rack_Test extends LinearOpMode {
         double lateral = 0.0;
         double yaw     = 0.0;
 
-	double leftFrontPower  = axial + lateral + yaw;
+		double leftFrontPower  = axial + lateral + yaw;
         double rightFrontPower = axial - lateral - yaw;
         double leftBackPower   = axial - lateral + yaw;
         double rightBackPower  = axial + lateral - yaw;
