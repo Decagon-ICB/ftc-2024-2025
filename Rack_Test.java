@@ -19,7 +19,7 @@ public class Rack_Test extends LinearOpMode {
 	
 	public DcMotor Rack_Motor = null;
 
-    // public Servo Rack_Servo = null;
+    public Servo Rack_Servo = null;
 
     // public double Rack_Pos = 0.0;
     // public double Rack_inc = 0.05;
@@ -35,7 +35,7 @@ public class Rack_Test extends LinearOpMode {
         FR_Motor = hardwareMap.get(DcMotor.class, "FR Wheel Motor");
 		Rack_Motor = hardwareMap.get(DcMotor.class, "Rack Motor");
 
-        // Rack_Servo = hardwareMap.get(Servo.class, "Rack_Servo");
+        Rack_Servo = hardwareMap.get(Servo.class, "Rack_Servo");
 
 		double max = 0.0;
 
