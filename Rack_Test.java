@@ -49,10 +49,10 @@ public class Rack_Test extends LinearOpMode {
         double rightBackPower  = axial + lateral - yaw;
 
 		//Drive Test
-        //FL_Motor.setDirection(DcMotor.Direction.REVERSE);
-        //BL_Motor.setDirection(DcMotor.Direction.REVERSE);
-        //FR_Motor.setDirection(DcMotor.Direction.FORWARD);
-        //BR_Motor.setDirection(DcMotor.Direction.FORWARD);
+        FL_Motor.setDirection(DcMotor.Direction.REVERSE);
+        BL_Motor.setDirection(DcMotor.Direction.REVERSE);
+        FR_Motor.setDirection(DcMotor.Direction.FORWARD);
+        BR_Motor.setDirection(DcMotor.Direction.FORWARD);
 
         // Wait for the game to start (driver presses PLAY)
         telemetry.addData("Status", "Initialized");
