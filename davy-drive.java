@@ -15,6 +15,8 @@ public class Rack_Test_2 extends LinearOpMode {
     public DcMotor BR_Motor = null;
     public DcMotor FL_Motor = null;
     public DcMotor FR_Motor = null;
+	
+	public DcMotor Arm_Motor = null;
 
     public Servo Rack_Servo = null;
 
@@ -31,6 +33,8 @@ public class Rack_Test_2 extends LinearOpMode {
         BL_Motor = hardwareMap.get(DcMotor.class, "BL Wheel Motor");
         FR_Motor = hardwareMap.get(DcMotor.class, "FR Wheel Motor");
 
+		Arm_Motor = hardwareMap.get(DcMotor.class, "Arm Motor");
+		
         Rack_Servo = hardwareMap.get(Servo.class, "Rack_Servo");
 
 		double max = 0.0;
@@ -87,6 +91,13 @@ public class Rack_Test_2 extends LinearOpMode {
             FR_Motor.setPower(rightFrontPower);
             BL_Motor.setPower(leftBackPower);
             BR_Motor.setPower(rightBackPower);
+
+			if (gamepad1.x) {
+				Arm_Motor.setPower(1);
+			}
+			if (gamepad1.y) {
+				Arm_Motor.setPower(-1);
+			}
 
             // Calculate Servo Position
             if(!dpad_latch_right && gamepad1.dpad_right && Rack_Pos < 1.0){
